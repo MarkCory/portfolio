@@ -1,0 +1,13 @@
+		<div class="portfolio">
+				<div class="proj" ng-repeat="project in projects | filter:projSearch | orderBy:'-year'">
+					<div class="heroImg" ng-repeat="cover in project.cover | limitTo: 1">
+						<img ng-src="{{project.path}}{{cover}}" class="projImg" />
+					</div>
+					<desc ng-click="toggle(project, project.pid)"></desc>
+				</div>
+			</div>
+<pageslide ps-open="checked" ps-side="right" ps-size="100%" ps-push="true" >
+			<div class="longdesc">
+				
+			</div>
+		</pageslide>

@@ -1,0 +1,38 @@
+<div class="projectView">
+	<a href="/#/" class="closeBtn">Return to Portfolio</a>
+	<a href="/#/project/{{pidn()}}" class="nextBtn">Next Project</a>
+	<section class="project">
+	<div>
+		<h1>{{projects[pid].projectShortName}}</h1>
+		<h2>Description</h2>
+		<p ng-bind-html="projects[pid].descA"></p>
+		<p ng-bind-html="projects[pid].descB"></p>
+		<h2>My Role</h2>
+		<p ng-bind-html="projects[pid].role"></p>
+		<h2>Project Details</h2>
+		<div ng-repeat="image in projects[pid].images" ng-show="projects[pid].images">
+		<figure ng-class="projects[pid].imageSize[$index]">
+			<img ng-src={{projects[pid].path}}{{image}}>
+			<figcaption ng-bind-html="projects[pid].imageDesc[$index]" ng-show="projects[pid].imageDesc[$index]"></figcaption>
+		</figure>
+		</div>
+		<div ng-repeat="anim in projects[pid].animations" ng-show="projects[pid].animations">
+			<figure ng-class="projects[pid].animSize[$index]">
+				<img ng-src={{projects[pid].path}}{{anim}} alt="">
+				<figcaption ng-bind-html="projects[pid].animDesc[$index]" ng-show="projects[pid].animDesc[$index]"></figcaption>
+			</figure>
+		</div>
+		<div ng-repeat="video in projects[pid].videos" ng-show="projects[pid].videos">
+			<video ng-src="{{video | trustUrl}}" controls="controls">
+			</video>
+			<div class="vidDesc">
+				<p class="vidDesc" ng-bind-html="projects[pid].videosDesc[$index]" ng-show="projects[pid].videosDesc[$index]"></p>
+			</div>
+		</div>
+	</div>
+	</section>
+	<pageslide ps-open="checked" ps-side="right" ps-size="38.2%" ps-push="true" >
+		<div class="longdesc">
+		</div>
+	</pageslide>
+</div>

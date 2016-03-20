@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+	<title>The Portfolio of Mark Cory Anderson</title>
+	<link rel="stylesheet" href="ui/css/style.css">
+</head>
+<body ng-app="portfolio" resize>
+	<div ng-controller="PortCtrl" class="container">
+		<header>
+			<div class="ego">
+				<h1>Mark Cory Anderson</h1>
+				<h2>Senior Web Developer, Georgetown University</h2>			
+			</div>
+			<div class="searchBar">
+				<div class="contact">
+					<dl>
+						<dd><a ng-click="toggle('close')" ng-href="/#/about" class="menu">About Me</a></dd>
+						<dd><a ng-click="toggle('close')" ng-href="/#/contact" class="menu">Contact Me</a></dd>
+						<dd><a class="menu" ng-href="https://www.linkedin.com/in/markcoryanderson" target="_blank">LinkedIn</a></dd>
+					</dl>
+				</div>
+				<label for="projSearch"></label><input type="text" placeholder="Search Portfolio" ng-model="projSearch" id="projSearch" />
+			</div>
+		</header>
+		<route-loading-indicator></route-loading-indicator>
+		<ng-view ng-if="!isRouteLoading"
+		[onload="enter"]
+		[autoscroll="true"]></ng-view>
+	</div>
+</body>
+	<script src="ui/js/jquery-2.2.0.min.js"></script>
+	<script src="ui/js/angular.js"></script>
+</script>
+</html>

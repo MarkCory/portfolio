@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Test</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
+	<script src="app.js"></script>
+	<style>
+		#mailform div {overflow: hidden; transition:height .4s;}
+	</style>
+</head>
+<body ng-app="mailsend">
+	<form ng-controller="send-mail" id="mailform">
+		<div>
+			<label for="sender">Name:</label>
+			<input type="text" id="sender" name="sender" ng-model="sender" />
+			<label for="replyAddress">Reply Address:</label>
+			<input type="text" id="replyAddress" name="replyAddress" ng-model="replyAddress" />
+			<label for="message">Message:</label>
+			<textarea name="msg" id="msg" ng-model="msg" cols="50" rows="10"></textarea>
+			<button ng-click="do_mail()" value="Send">Send</button>
+		</div>
+		<h3 ng-bind-html="mailresponse"></h3>
+	</form>
+</body>
+</html>

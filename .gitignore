@@ -1,0 +1,7 @@
+**/assets/*
+build/
+build/**
+markcoryanderson.com\@markcoryanderson.com
+markcoryanderson.com\@s17557.gridserver.com
+node_modules/**
+.DS_Store

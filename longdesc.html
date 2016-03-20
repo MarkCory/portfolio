@@ -1,0 +1,11 @@
+<section class="project">
+	<a class="closeBtn" title="Back to Portfolio" ng-click="toggle('close')">X</a>
+	<a ng-href={{'/#/project/'+pNum}} style="text-decoration:none;"><input type="button" value="View Case Study"></a>
+	<p ng-bind-html="current.descA"></p>
+	<div ng-bind-html="current.descB"></div>
+</section>
+<div class="tags" ng-repeat="tag in current.tags">
+	<span style="">
+		{{tag}}
+	</span>
+</div>
